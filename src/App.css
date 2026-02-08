@@ -1,38 +1,258 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  padding: 20px;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #bdc3c7;
+  margin-bottom: 15px;
+}
+
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #c0392b;
+}
+
+main {
+  padding: 20px;
+}
+
+.form-container {
+  margin-bottom: 30px;
+}
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.form-container textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background: #2980b9;
+}
+
+.notes-container h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.empty {
   text-align: center;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #7f8c8d;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.empty p {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.create-btn {
+  padding: 10px 20px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.create-btn:hover {
+  background: #219653;
+}
+
+.notes-list {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+}
+
+.note {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.note.editing {
+  border-color: #3498db;
+}
+
+.view-mode {
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+.note-text p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  white-space: pre-line;
+}
+
+.note-footer {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.note-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.edit, .delete {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.edit {
+  background: #2ecc71;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.delete {
+  background: #e74c3c;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.note-date {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.edit-mode {
+  background: #e3f2fd;
+  padding: 20px;
+}
+
+.edit-mode h4 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.edit-mode textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #90caf9;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.edit-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.save, .cancel {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save {
+  background: #27ae60;
+  color: white;
+}
+
+.cancel {
+  background: #95a5a6;
+  color: white;
+}
+
+footer {
+  background: #ecf0f1;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.debug-info {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.debug-info code {
+  background: #2c3e50;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
 }
